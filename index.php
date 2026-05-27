@@ -25,5 +25,11 @@
         </div>
      </div>
 
+
+     <!-- A treia sectiune a paginii -->
+    <div class="experienceSection">
+        <h2 class="titluExperience">Experiența profesională</h2>
+        <p class="descriereExperience">Aici pot fi afișate informațiile despre experiența profesională.</p>
+    </div>
 </body>
 </html> 
