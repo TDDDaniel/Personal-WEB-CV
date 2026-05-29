@@ -17,6 +17,9 @@ fetch(url)
             div.innerHTML = `
                 <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
                 <p>${repo.description || 'Nicio descriere adăugată.'}</p>
+                <p>Ultima actualizare: ${new Date(repo.updated_at).toLocaleDateString()}</p>
+                <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
+                <button onclick="window.open('${repo.html_url}', '_blank')">Vezi pe GitHub</button>
             `;
             container.appendChild(div);
         });
