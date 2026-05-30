@@ -31,7 +31,7 @@
      <!-- A treia sectiune a paginii -->
     <div class="experienceSection">
         <h2 class="titluExperience">Experiența profesională</h2>
-        <h3>Software Developer</h3>
+        <h3>NIMIC</h3>
     </div>
 </body>
 </html> 
