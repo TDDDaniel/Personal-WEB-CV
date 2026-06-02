@@ -19,9 +19,10 @@ fetch(url)
                 <p>${repo.description || 'Nicio descriere adăugată.'}</p>
                 <p>Ultima actualizare: ${new Date(repo.updated_at).toLocaleDateString()}</p>
                 <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
-                <h4>${repo.language || 'Limbă necunoscută'}</h4>
+                <h4>Limbaj de programare: ${repo.language || 'Limbă necunoscută'}</h4>
                 <a href="${repo.url}"><button>GitHub</button></a>
             `;
+           
             container.appendChild(div);
         });
     })
