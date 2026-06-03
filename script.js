@@ -1,5 +1,20 @@
+console.log('Script încărcat cu succes!');
+
 const username = 'TDDDaniel'; 
 const url = `https://api.github.com/users/${username}/repos`;
+
+const languageIcons = {
+    "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    "PHP": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+    "C++": "imagini/programmer.png",
+    "Java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    "Python": "imagini/python.png",
+    "C": "imagini/c-.png",
+    "HTML": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    "CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    "Default": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg"
+}
+
 
 fetch(url)
     .then(response => {
@@ -10,9 +25,10 @@ fetch(url)
     })
     .then(data => {
         const container = document.querySelector('.proiecte-github');
-        
+    
         data.forEach(repo => {
             const div = document.createElement('div');
+           
             div.className = 'repo-card';
             div.innerHTML = `
                 <h3>${repo.name}</h3>
@@ -20,14 +36,15 @@ fetch(url)
                 <p>Ultima actualizare: ${new Date(repo.updated_at).toLocaleDateString()}</p>
                 <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
                 <h4>Limbaj de programare: ${repo.language || 'Limbă necunoscută'}</h4>
-                <a href="${repo.url}"><button>GitHub</button></a>
+                <img src="${languageIcons[repo.language] || languageIcons['Default']}" alt="${repo.language}" class="language-icon">
+                <a href="${repo.html_url}" target="_blank"><button>GitHub</button></a>
+                
             `;
-           
             container.appendChild(div);
+            console.log(repo.name, repo.language);
         });
     })
     .catch(error => console.error('Eroare la preluarea datelor:', error));
-
 
     /*
         1. Sa apara apartamentul
