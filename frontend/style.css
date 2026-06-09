@@ -12,7 +12,7 @@ body {
 
 .topFirstPageInformation {
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
     justify-content:flex-start;
     width: 80%;
@@ -25,6 +25,21 @@ body {
 
 .topFirstPageInformation img{
     border-radius: 50%;
+}
+
+.topFirstPageInformation button{
+    background-color: #27272D;
+    color: #3891CB;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .proiecte-github {
@@ -85,6 +100,14 @@ nav ul {
     padding: 0;
 }
 
+nav ul li a{
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
 .filtrareProiecte{
     display: flex;
     flex-direction: row;
@@ -92,4 +115,29 @@ nav ul {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+}
+
+.educationSection {
+    background-color: #282B2F;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+select{
+    background-color: #27272D;
+    color: #3891CB;
+    border: 3px solid #18435E;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
