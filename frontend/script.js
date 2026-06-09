@@ -47,7 +47,12 @@ fetch(url)
             
         });
     })
-    .catch(error => console.error('Eroare la preluarea datelor:', error));
+    .catch(() => {
+        const div = document.createElement('div');
+        div.className = 'error-message';
+        div.innerHTML =`<h3>A apărut o eroare la încărcarea proiectelor GitHub. Vă rugăm să încercați din nou mai târziu.</h3>`
+        document.querySelector('.proiecte-github').appendChild(div);
+    });
 
     /*
         1. Sa apara apartamentul
