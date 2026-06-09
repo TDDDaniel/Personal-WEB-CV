@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daniel Turcu</title>
      <link rel="stylesheet" href="style.css">
      
 </head>
@@ -34,18 +34,18 @@
         <h2 class="titluProjects">Proiectele mele</h2>
         <div class="filtrareProiecte">
             <h4>Limbaje de programare: </h4>
-            <select>
+            <select id="selectieLimbaj">
+                <option value="all" selected>Toate</option>
                 <option value="js">JavaScript</option>
-                <option value="py" selected>Python</option>
+                <option value="py">Python</option>
                 <option value="c">C</option>
                 <option value="Cplusplus">C++</option>
+                <option value="java">Java</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
             </select>
 
-            <h4>Data ultimei modificari: </h4>
-            <select>
-                <option value="#">Recent</option>
-                <option value="#" selected>Cea mai veche</option>
-            </select>
+            <button id="filtreazaProiecte">Filtreaza</button>
         </div>
 
         </div>
@@ -55,14 +55,7 @@
      </div>
 
 
-     <!-- A treia sectiune a paginii -->
-    <div class="experienceSection">
-        <h2 class="titluExperience">Experiența profesională</h2>
-        <h3>NIMIC</h3>
-    </div>
-
-
-    <!-- A patra sectiune a paginii   -->
+    <!-- A treia sectiune a paginii   -->
     <div class="educationSection">
         <h2 class="titluEducation">Educație</h2>
         <h3>Facultatea de Inginerie ULBS, Specializarea Calculatoare</h3>

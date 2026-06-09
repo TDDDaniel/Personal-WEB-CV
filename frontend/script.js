@@ -1,7 +1,10 @@
 
 
 const username = 'TDDDaniel'; 
-const url = `https://api.github.com/users/${username}/repos`;
+const url = `https://api.github.com/users/${username}/repos?sort=updated`;
+const selectieLimbaj = document.getElementById('selectieLimbaj').value;
+
+let limitaAfisare = 6;
 
 const languageIcons = {
     "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
@@ -26,7 +29,7 @@ fetch(url)
     .then(data => {
         const container = document.querySelector('.proiecte-github');
         const forkedRepos = data.filter(repo => !repo.fork);
-        
+       
         forkedRepos.forEach(repo => {
             const div = document.createElement('div');
            
