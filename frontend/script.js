@@ -1,4 +1,4 @@
-console.log('Script încărcat cu succes!');
+
 
 const username = 'TDDDaniel'; 
 const url = `https://api.github.com/users/${username}/repos`;
@@ -25,8 +25,9 @@ fetch(url)
     })
     .then(data => {
         const container = document.querySelector('.proiecte-github');
-    
-        data.forEach(repo => {
+        const forkedRepos = data.filter(repo => !repo.fork);
+        
+        forkedRepos.forEach(repo => {
             const div = document.createElement('div');
            
             div.className = 'repo-card';
@@ -38,10 +39,9 @@ fetch(url)
                 <h4>Limbaj de programare: ${repo.language || 'Limbă necunoscută'}</h4>
                 <img src="${languageIcons[repo.language] || languageIcons['Default']}" alt="${repo.language}" class="language-icon">
                 <a href="${repo.html_url}" target="_blank"><button>GitHub</button></a>
-                
             `;
             container.appendChild(div);
-            console.log(repo.name, repo.language);
+            
         });
     })
     .catch(error => console.error('Eroare la preluarea datelor:', error));
