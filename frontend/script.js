@@ -22,7 +22,7 @@ const languageIcons = {
 fetch(url)
     .then(response => {
         if (!response.ok) {
-            throw new Error(`Eroare HTTP: ${response.status}`);
+            throw new Error(`HTTP Error: ${response.status}`);
         }
         return response.json();
     })
@@ -36,10 +36,10 @@ fetch(url)
             div.className = 'repo-card';
             div.innerHTML = `
                 <h3>${repo.name}</h3>
-                <p>${repo.description || 'Nicio descriere adăugată.'}</p>
-                <p>Ultima actualizare: ${new Date(repo.updated_at).toLocaleDateString()}</p>
+                <p>${repo.description || 'No description added.'}</p>
+                <p>Last updated: ${new Date(repo.updated_at).toLocaleDateString()}</p>
                 <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
-                <h4>Limbaj de programare: ${repo.language || 'Limbă necunoscută'}</h4>
+                <h4>Programming Language: ${repo.language || 'Unknown Language'}</h4>
                 <img src="${languageIcons[repo.language] || languageIcons['Default']}" alt="${repo.language}" class="language-icon">
                 <a href="${repo.html_url}" target="_blank"><button>GitHub</button></a>
             `;
@@ -50,7 +50,7 @@ fetch(url)
     .catch(() => {
         const div = document.createElement('div');
         div.className = 'error-message';
-        div.innerHTML =`<h3>A apărut o eroare la încărcarea proiectelor GitHub. Vă rugăm să încercați din nou mai târziu.</h3>`
+        div.innerHTML =`<h3>An error occurred while loading GitHub projects. Please try again later.</h3>`
         document.querySelector('.proiecte-github').appendChild(div);
     });
 
